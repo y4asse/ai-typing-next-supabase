@@ -5,6 +5,9 @@ import { store } from "../redux/store";
 import { Sora } from "next/font/google";
 import Footer from "./components/footer";
 import Identify from "./components/Identify";
+import { useAppSelector } from "@/redux/hooks";
+import PrivacyModal from "./components/modals/errorModal";
+import ModalPortal from "./components/modals/modalPortal";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -25,8 +28,10 @@ export default function RootLayout({
     <html lang="en" className={`${sora.className}`}>
       <body>
         <Provider store={store}>
-          <Identify>{children}</Identify>
-          <Footer />
+          <Identify>
+            <ModalPortal>{children}</ModalPortal>
+            <Footer />
+          </Identify>
         </Provider>
       </body>
     </html>

@@ -1,3 +1,5 @@
+'use client'
+
 import { showPrivacyModal } from "@/redux/features/Modal";
 import { useAppDispatch } from "@/redux/hooks";
 import React from "react";

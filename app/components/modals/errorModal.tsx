@@ -2,7 +2,7 @@ import { closeErrorModal, closePrivacyModal } from "@/redux/features/Modal";
 import { useAppDispatch } from "@/redux/hooks";
 import { FC } from "react";
 
-const PrivacyModal: FC = () => {
+const ErrorModal: FC = () => {
   const dispatch = useAppDispatch();
   return (
     <div className="modal error">
@@ -19,4 +19,4 @@ const PrivacyModal: FC = () => {
   );
 };
 
-export default PrivacyModal;
+export default ErrorModal;

@@ -1,6 +1,5 @@
 'use client'
 
-import { Inter } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { showInfoModal, showOptionModal } from "@/redux/features/Modal";
