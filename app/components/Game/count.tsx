@@ -1,21 +1,26 @@
-import { GetStaticPaths } from "next";
-import { useRouter } from "next/router";
-import React, { Dispatch, useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+"use client";
 
-const Start = ({setGameStart}: {setGameStart: Dispatch<boolean>}) => {
+import React, { Dispatch, useEffect, useState } from "react";
+import { CountDiv, CountSpan } from "../styled";
+
+const Count = ({
+  setIsGameStart,
+  setIsCountStart,
+}: {
+  setIsGameStart: Dispatch<boolean>;
+  setIsCountStart: Dispatch<boolean>;
+}) => {
   const text = "生成が完了しました．ゲームを開始します.".split("");
   const [timer, setTimer] = useState(3);
   const [typingTimer, setTypingTimer] = useState(0);
-  const [isCountStart, setIsCountStart] = useState(false);
+  const [isCountNumStart, setIsCountNumStart] = useState(false);
 
-  const router = useRouter();
   useEffect(() => {
     let c = 0;
     const typingCount = setInterval(() => {
       if (c > text.length) {
         clearInterval(typingCount);
-        setIsCountStart(true);
+        setIsCountNumStart(true);
         return;
       }
       setTypingTimer((prev) => prev + 1);
@@ -26,7 +31,8 @@ const Start = ({setGameStart}: {setGameStart: Dispatch<boolean>}) => {
       if (c > text.length) {
         setTimer((prev) => {
           if (prev < 1) {
-            setGameStart(true);
+            setIsGameStart(true);
+            setIsCountStart(false);
             return prev;
           }
           return prev - 1;
@@ -52,7 +58,7 @@ const Start = ({setGameStart}: {setGameStart: Dispatch<boolean>}) => {
               return "";
             })}
           </h3>
-          {isCountStart && (
+          {isCountNumStart && (
             <CountDiv>
               <CountSpan>{timer === 0 ? "スタート!" : timer}</CountSpan>
             </CountDiv>
@@ -63,35 +69,5 @@ const Start = ({setGameStart}: {setGameStart: Dispatch<boolean>}) => {
   );
 };
 
-export default Start;
+export default Count;
 
-export const rotate = keyframes`
-  0%{
-    transform: rotateY(0);
-    opacity: 0;
-  }
-  10%{
-    transform: rotateY(0);
-    opacity: 1;
-  }
-  90%{
-    transform: rotateY(0deg);
-    opacity: 1;
-  }
-  100%{
-    transform: rotateY(180deg);
-    opacity: 0;
-  }
-`;
-
-const CountSpan = styled.h1`
-  font-size: 100px;
-  padding: 50px;
-  animation: ${rotate} 1s infinite;
-`;
-
-export const CountDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;

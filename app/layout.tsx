@@ -6,6 +6,7 @@ import { Sora } from "next/font/google";
 import Footer from "./components/footer";
 import Identify from "./components/Identify";
 import ModalPortal from "./components/modals/modalPortal";
+import Nav from "./components/nav";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -21,7 +22,10 @@ export default function RootLayout({
       <body>
         <Provider store={store}>
           <Identify>
-            <ModalPortal>{children}</ModalPortal>
+            <ModalPortal>
+              <Nav />
+              {children}
+            </ModalPortal>
             <Footer />
           </Identify>
         </Provider>

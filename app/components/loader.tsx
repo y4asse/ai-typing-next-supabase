@@ -1,10 +1,8 @@
-import { useRouter } from "next/router";
 import React, { FC, useEffect, useState } from "react";
 
 const Loader = () => {
   const textArray = "AIがテキストを生成中です...".split("");
   const [count, setCount] = useState(0);
-  const router = useRouter();
 
   useEffect(() => {
     const timer = setInterval(() => {

@@ -10,10 +10,7 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(to bottom right, #a6c0fe 0%, #f68084 100%);
-  background-size: cover;
-  color: rgb(50, 50, 50);
-  font-family: "Sora", sans-serif;
+  background: linear-gradient(to bottom right, #a7c0ff 0%, #fdb4b7 100%);
   overflow: hidden;
 }
 

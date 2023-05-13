@@ -1,14 +1,32 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+interface State {
+  currentCharIndex: number;
+  currentTextIndex: number;
+  timer: number;
+  english: string[];
+  japanese: string[];
+}
+
+const initialState: State = {
+  currentCharIndex: 0,
+  currentTextIndex: 0,
+  timer: 10,
+  english: [],
+  japanese: [],
+};
+
 export const gameSlice = createSlice({
   name: "game",
-  initialState: {
-    currentCharIndex: 0,
-    currentTextIndex: 0,
-    timer: 10,
-    english: [""],
-    japanese: [""],
-  },
+  initialState,
   reducers: {
+    reset: (state) => {
+      state.currentCharIndex = 0;
+      state.currentTextIndex = 0;
+      state.timer = 10;
+      state.english = [];
+      state.japanese = [];
+    },
     setCurrentCharIndex: (state, { payload }) => {
       state.currentCharIndex = payload;
     },
@@ -58,6 +76,7 @@ export const {
   addEnglishText,
   addCurrentTextIndex,
   addCurrentCharIndex,
+  reset,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;
