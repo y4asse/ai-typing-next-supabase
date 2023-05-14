@@ -1,3 +1,5 @@
+export const revalidate = 0;
+
 import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import React from "react";
 import { headers, cookies } from "next/headers";
