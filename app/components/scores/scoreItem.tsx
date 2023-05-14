@@ -7,8 +7,8 @@ type Score = Database["public"]["Tables"]["scores"]["Row"];
 const ScoreItem = (scoreInfo: Score) => {
   return (
     <>
-      <td className=" p-3">{scoreInfo.name ? scoreInfo.name : "名無しさん"}</td>
       <td className=" p-3">{scoreInfo.score}</td>
+      <td className=" p-3">{scoreInfo.name ? scoreInfo.name : "名無しさん"}</td>
       <td className=" p-3">
         {scoreInfo.difficulty === "easy"
           ? "簡単"

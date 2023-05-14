@@ -7,7 +7,7 @@ import CommentForm from "../components/comments/comment-form";
 const Ranking = () => {
   return (
     <div className="">
-      <div className="flex">
+      <div className="fixed flex top-1">
         <GoBackBtn />
       </div>
       <div className="flex flex-col justify-center items-center gap-3 my-10">
