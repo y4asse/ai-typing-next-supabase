@@ -17,13 +17,25 @@ export default function SupabaseListener({
     const getUserInfo = async () => {
       //クライアントのセッションを取得
       const { data } = await supabase.auth.getSession();
-      dispatch(setUser({ id: data.session?.user.id!, email: data.session?.user.email! }));
+      dispatch(
+        setUser({
+          id: data.session?.user.id!,
+          email: data.session?.user.email!,
+          name: data.session?.user.user_metadata.user_name,
+        })
+      );
     };
     getUserInfo();
 
     //ログイン，ログアウトしたときを監視し，セッション情報を取得する（ブラウザ内の話）
     supabase.auth.onAuthStateChange((_, session) => {
-      dispatch(setUser({ id: session?.user.id!, email: session?.user.email! }));
+      dispatch(
+        setUser({
+          id: session?.user.id!,
+          email: session?.user.email!,
+          name: session?.user.user_metadata.user_name,
+        })
+      );
       if (session?.access_token !== accessToken) {
         //キャッシュクリア
         router.refresh();

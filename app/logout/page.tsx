@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useSupabase } from "../components/supabase-provider";
+import { useSupabase } from "../components/supabase/supabase-provider";
 import { useRouter } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 
