@@ -5,7 +5,7 @@ import Loader from "../../components/loader/loader";
 import Game from "@/app/components/Game/game";
 import Count from "@/app/components/Game/count";
 import ScoreLayout from "@/app/components/Game/scoreLayout";
-import WaitingPress from "@/app/components/waitingPress";
+import WaitingPress from "@/app/components/Game/waitingPress";
 
 export default function Play() {
   const [isLoading, setIsLoading] = useState(false);
