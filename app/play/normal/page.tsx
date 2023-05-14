@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Loader from "../../components/loader";
+import Loader from "../../components/loader/loader";
 import Game from "@/app/components/Game/game";
 import Count from "@/app/components/Game/count";
 import ScoreLayout from "@/app/components/Game/scoreLayout";

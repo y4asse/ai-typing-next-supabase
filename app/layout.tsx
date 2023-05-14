@@ -1,11 +1,11 @@
 import "./globals.css";
 import { Sora } from "next/font/google";
-import Footer from "./components/footer";
-import Identify from "./components/Identify";
+import Footer from "./components/layout/footer";
+import Identify from "./components/layout/Identify";
 import ModalPortal from "./components/modals/modalPortal";
-import Nav from "./components/nav";
-import SupabaseProvider from "./components/supabase-provider";
-import SupabaseListener from "./components/supabase-listener";
+import Nav from "./components/layout/nav";
+import SupabaseProvider from "./components/supabase/supabase-provider";
+import SupabaseListener from "./components/supabase/supabase-listener";
 import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { Database } from "@/database.types";
 import { headers, cookies } from "next/headers";

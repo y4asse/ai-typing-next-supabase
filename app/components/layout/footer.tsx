@@ -7,7 +7,7 @@ import React from "react";
 const Footer = () => {
   const dispatch = useAppDispatch();
   return (
-    <footer className="absolute bottom-0 w-full">
+    <footer className="fixed bottom-0 w-full bg-gray-700 text-white flex justify-center gap-5 py-1 items-center">
       <span>2023</span>
       <a
         href="https://twitter.com/y4isse"

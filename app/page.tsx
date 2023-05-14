@@ -33,7 +33,7 @@ export default function Home() {
           <h1>AI Typing</h1>
           <p>
             GPTが文を生成
-            <FaPencilAlt />
+            <FaPencilAlt className=" inline-block" />
           </p>
         </div>
         <div className="buttonContainer">
@@ -41,15 +41,15 @@ export default function Home() {
             onClick={() => router.push("/difficulty")}
             className="button start"
           >
-            <FaRocket />
+            <FaRocket className=" inline-block mr-5" />
             スタート
           </button>
           <button className="button" onClick={() => dispatch(showInfoModal())}>
-            <FaInfoCircle />
+            <FaInfoCircle className=" inline-block mr-5" />
             お知らせ
           </button>
           <button className="button" onClick={() => router.push("/ranking")}>
-            <GiStairs />
+            <GiStairs className=" inline-block mr-5" />
             ランキング
           </button>
         </div>
