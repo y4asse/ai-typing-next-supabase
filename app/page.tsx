@@ -1,13 +1,16 @@
-'use client'
+"use client";
 
 import { useRouter } from "next/navigation";
+
+import { GiStairs } from "react-icons/gi";
+import { FaRocket, FaPencilAlt } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { showInfoModal, showOptionModal } from "@/redux/features/Modal";
 import InfoModal from "./components/modals/infoModal";
 import OptionModal from "./components/modals/optionModal";
 import Image from "next/image";
 import imageSrc from "./image/OIG.jpg";
-
 
 export default function Home() {
   const router = useRouter();
@@ -28,22 +31,25 @@ export default function Home() {
             style={{ borderRadius: "40%" }}
           />
           <h1>AI Typing</h1>
-          <p>GPTが文を生成！</p>
+          <p>
+            GPTが文を生成
+            <FaPencilAlt />
+          </p>
         </div>
         <div className="buttonContainer">
           <button
             onClick={() => router.push("/difficulty")}
             className="button start"
           >
+            <FaRocket />
             スタート
           </button>
           <button className="button" onClick={() => dispatch(showInfoModal())}>
+            <FaInfoCircle />
             お知らせ
           </button>
-          <button
-            className="button"
-            onClick={() => dispatch(showOptionModal())}
-          >
+          <button className="button" onClick={() => router.push("/ranking")}>
+            <GiStairs />
             ランキング
           </button>
         </div>
