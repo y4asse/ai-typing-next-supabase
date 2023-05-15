@@ -15,6 +15,7 @@ const Login = () => {
     await supabase.auth.signInWithOAuth({
       provider: "github",
     });
+    router.push("/");
   };
   return (
     <div className="container">
@@ -25,7 +26,12 @@ const Login = () => {
         </p>
         <p className="text-center mb-10">
           プライバシーポリシーについては
-          <span className="underline cursor-pointer" onClick={() => dispatch(showPrivacyModal())}>こちら</span>
+          <span
+            className="underline cursor-pointer"
+            onClick={() => dispatch(showPrivacyModal())}
+          >
+            こちら
+          </span>
           をご覧ください．
         </p>
         <div

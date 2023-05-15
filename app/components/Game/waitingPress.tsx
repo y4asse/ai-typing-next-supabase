@@ -21,18 +21,23 @@ type Data = {
 const WaitingPress = ({
   setIsLoading,
   setIsCountStart,
+  difficulty,
 }: {
   setIsLoading: React.Dispatch<boolean>;
   setIsCountStart: React.Dispatch<boolean>;
+  difficulty: string;
 }) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const apiRequest = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/easy`, {
-        method: "get",
-        cache: "no-store",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/${difficulty}`,
+        {
+          method: "get",
+          cache: "no-store",
+        }
+      );
       return res.json();
     } catch (e) {
       console.log(e);
@@ -73,7 +78,15 @@ const WaitingPress = ({
   return (
     <div className="container">
       <div className="title">
-        <h1>簡単</h1>
+        <h1>
+          {difficulty === "easy"
+            ? "簡単"
+            : difficulty === "normal"
+            ? "普通"
+            : difficulty == "hard"
+            ? "難しい"
+            : "error"}
+        </h1>
       </div>
       <div className="mb-tb">
         <span style={{ fontSize: 30 }}>
