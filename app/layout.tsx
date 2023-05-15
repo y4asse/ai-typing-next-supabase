@@ -10,10 +10,16 @@ import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-next
 import { Database } from "@/database.types";
 import { headers, cookies } from "next/headers";
 import { ReduxProvider } from "@/redux/provider";
+import { Metadata } from "next";
 
 const sora = Sora({
   subsets: ["latin"],
 });
+
+export const metadata: Metadata = {
+  title: 'AI Typing'
+}
+
 
 export default async function RootLayout({
   children,
@@ -29,6 +35,7 @@ export default async function RootLayout({
   } = await supabase.auth.getSession();
   return (
     <html lang="en" className={`${sora.className}`}>
+      
       <body>
         <ReduxProvider>
           <SupabaseProvider>
