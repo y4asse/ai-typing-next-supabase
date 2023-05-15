@@ -22,7 +22,6 @@ const ScoresList = async () => {
           <tr className="border-b-2 border-black">
             <th className=" p-3">順位</th>
             <td className=" p-3">スコア</td>
-            <td className=" p-3">名前</td>
             <td className=" p-3">難易度</td>
             <td className=" p-3">日付</td>
           </tr>
