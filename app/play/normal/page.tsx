@@ -30,6 +30,7 @@ export default function Play() {
         <WaitingPress
           setIsLoading={setIsLoading}
           setIsCountStart={setIsCountStart}
+          difficulty="normal"
         />
       )}
     </>
