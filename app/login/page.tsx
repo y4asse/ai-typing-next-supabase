@@ -15,7 +15,6 @@ const Login = () => {
     await supabase.auth.signInWithOAuth({
       provider: "github",
     });
-    router.push("/");
   };
   return (
     <div className="container">
