@@ -83,6 +83,12 @@ const PrivacyModal: FC = () => {
       <p>
         ご提供いただく個人情報は、当サイトのプライバシーポリシーに従って使用されます。プライバシーに関するご質問や懸念がある場合は、お気軽にお問い合わせください。
       </p>
+      <br />
+
+      <p>サイト内で使用しているアニメーション<br />
+        Copyright (c) @TheDutchCoder Released under the MIT license <br/>
+        URL：https://codepen.io/TheDutchCoder/pen/VwMJJB
+      </p>
       <div className="flex justify-center mt-5">
         <button
           className="button small2 reverse"
@@ -92,6 +98,7 @@ const PrivacyModal: FC = () => {
         >
           閉じる
         </button>
+        pp
       </div>
     </div>
   );
