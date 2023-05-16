@@ -3,7 +3,7 @@ import Spinner from './components/utils/spinner'
 
 const Loading = () => {
   return (
-    <div><Spinner/></div>
+    <div className='container'><Spinner/></div>
   )
 }
 
