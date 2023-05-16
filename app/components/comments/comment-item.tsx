@@ -8,7 +8,7 @@ const CommentItem = (commentInfo: Comment) => {
   return (
     <div>
       <span className="mr-2">{commentInfo.name ? commentInfo.name : "名無しさん"}</span>
-      <span>{format(new Date(commentInfo.created_at), "yyyy/mm/dd")}</span>
+      <span>{format(new Date(commentInfo.created_at), "yyyy/mm/dd hh:mm")}</span>
       <p className="mt-3">{commentInfo.content}</p>
     </div>
   );
