@@ -85,8 +85,10 @@ const PrivacyModal: FC = () => {
       </p>
       <br />
 
-      <p>サイト内で使用しているアニメーション<br />
-        Copyright (c) @TheDutchCoder Released under the MIT license <br/>
+      <p>
+        サイト内で使用しているアニメーション
+        <br />
+        Copyright (c) @TheDutchCoder Released under the MIT license <br />
         URL：https://codepen.io/TheDutchCoder/pen/VwMJJB
       </p>
       <div className="flex justify-center mt-5">
@@ -98,7 +100,6 @@ const PrivacyModal: FC = () => {
         >
           閉じる
         </button>
-        pp
       </div>
     </div>
   );
