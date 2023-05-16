@@ -35,12 +35,6 @@ const TText = ({
   };
 
   useEffect(() => {
-    if (splitEnglish[currentCharIndex] === " ") {
-      dispatch(setCurrentCharIndex(currentCharIndex + 1));
-    }
-  }, [currentCharIndex]);
-
-  useEffect(() => {
     setInputArray([]);
   }, [currentTextIndex]);
 
@@ -94,7 +88,18 @@ const TText = ({
                 color: index < currentCharIndex ? "gray" : "white",
               }}
             >
-              {char === " " ? "\u00A0" : char}
+              {char === " " ? (
+                <span
+                  style={{
+                    background:
+                      currentCharIndex === index ? "white" : "transparent",
+                  }}
+                >
+                  {"\u00A0"}
+                </span>
+              ) : (
+                char
+              )}
             </div>
           ))}
         </div>

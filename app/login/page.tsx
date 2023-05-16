@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { FaGithub } from "react-icons/fa";
 import { useAppDispatch } from "@/redux/hooks";
 import { showPrivacyModal } from "@/redux/features/Modal";
+import GoBackBtn from "../components/goBackBtn";
 
 const Login = () => {
   const { supabase } = useSupabase();
@@ -17,31 +18,36 @@ const Login = () => {
     });
   };
   return (
-    <div className="container">
-      <div className="border-4 border-black p-5 rounded-xl">
-        <p className="text-center font-bold text-3xl mb-12">ログイン</p>
-        <p className="text-center mb-10">
-          ログインするとコメントを投稿することができます．
-        </p>
-        <p className="text-center mb-10">
-          プライバシーポリシーについては
-          <span
-            className="underline cursor-pointer"
-            onClick={() => dispatch(showPrivacyModal())}
+    <>
+      <div className="absolute">
+        <GoBackBtn />
+      </div>
+      <div className="container">
+        <div className="border-4 border-black p-5 rounded-xl">
+          <p className="text-center font-bold text-3xl mb-12">ログイン</p>
+          <p className="text-center mb-10">
+            ログインするとコメントを投稿することができます．
+          </p>
+          <p className="text-center mb-10">
+            プライバシーポリシーについては
+            <span
+              className="underline cursor-pointer"
+              onClick={() => dispatch(showPrivacyModal())}
+            >
+              こちら
+            </span>
+            をご覧ください．
+          </p>
+          <div
+            onClick={loginWithGit}
+            className="flex items-center gap-3 justify-center cursor-pointer border-4 border-black rounded-xl px-4 py-3 mx-5 my-1 text-xl font-semibold hover:bg-black hover:text-white transition-all duration-200"
           >
-            こちら
-          </span>
-          をご覧ください．
-        </p>
-        <div
-          onClick={loginWithGit}
-          className="flex items-center gap-3 justify-center cursor-pointer border-4 border-black rounded-xl px-4 py-3 mx-5 my-1 text-xl font-semibold hover:bg-black hover:text-white transition-all duration-200"
-        >
-          <FaGithub className=" w-8 h-8" />
-          <span onClick={loginWithGit}>GitHubでログイン</span>
+            <FaGithub className=" w-8 h-8" />
+            <span onClick={loginWithGit}>GitHubでログイン</span>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

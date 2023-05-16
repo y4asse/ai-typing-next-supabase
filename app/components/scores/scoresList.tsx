@@ -14,7 +14,8 @@ const ScoresList = async () => {
   const { data: scores } = await supabase
     .from("scores")
     .select("*")
-    .order("score", { ascending: false });
+    .order("score", { ascending: false })
+    .range(0, 9);
   return (
     <div className="border-black border-2 border-collapse w-3/5 font-semibold rounded-xl shadow-xl mb-5">
       <table className="w-full">
@@ -22,7 +23,6 @@ const ScoresList = async () => {
           <tr className="border-b-2 border-black">
             <th className=" p-3">順位</th>
             <td className=" p-3">スコア</td>
-            <td className=" p-3">名前</td>
             <td className=" p-3">難易度</td>
             <td className=" p-3">日付</td>
           </tr>
