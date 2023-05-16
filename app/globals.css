@@ -108,7 +108,7 @@ button.small2 {
 }
 
 button.reverse {
-  background: linear-gradient(to bottom right, #a6c0fe 0%, #f68084 100%);
+  background: rgb(255, 224, 152);
 }
 
 .reverse:hover {
@@ -296,5 +296,3 @@ button.reverse {
   position: relative;
   margin-bottom: 20px;
 }
-
-
