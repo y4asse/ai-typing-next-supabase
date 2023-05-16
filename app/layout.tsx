@@ -17,9 +17,8 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: 'AI Typing'
-}
-
+  title: "AI Typing",
+};
 
 export default async function RootLayout({
   children,
@@ -35,18 +34,17 @@ export default async function RootLayout({
   } = await supabase.auth.getSession();
   return (
     <html lang="en" className={`${sora.className}`}>
-      
       <body>
         <ReduxProvider>
           <SupabaseProvider>
             <SupabaseListener accessToken={session?.access_token} />
-              <Identify>
-                <ModalPortal>
-                  <Nav />
-                  {children}
-                </ModalPortal>
-                <Footer />
-              </Identify>
+            <Identify>
+              <ModalPortal>
+                <Nav />
+                {children}
+              </ModalPortal>
+              <Footer />
+            </Identify>
           </SupabaseProvider>
         </ReduxProvider>
       </body>
