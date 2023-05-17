@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import { useSupabase } from "../supabase/supabase-provider";
 import { useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
+import BtnSppiner from "../utils/btnSpinner";
 
 const CommentForm = () => {
   const { supabase } = useSupabase();
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const user_id = useAppSelector((state) => state.user.id);
 
@@ -17,6 +19,7 @@ const CommentForm = () => {
       alert("内容を入力してください");
       return;
     }
+    setIsLoading(true);
     const { data, error } = await supabase
       .from("comments")
       .insert({ content: content, name: name, user_id: user_id });
@@ -25,6 +28,7 @@ const CommentForm = () => {
     }
     setName("");
     setContent("");
+    setIsLoading(false);
     router.refresh();
   };
 
@@ -57,13 +61,11 @@ const CommentForm = () => {
             onClick={handleSubmit}
             className="border-black inline-block border-2 rounded-xl py-2 px-10 my-5 cursor-pointer hover:text-white hover:bg-black transition-all duration-200 shadow"
           >
-            <p>投稿</p>
+            <span>{isLoading ? <BtnSppiner color="white" /> : "投稿"}</span>
           </div>
         ) : (
           <>
-            <div
-              className="border-black inline-block border-2 rounded-xl py-2 px-10 my-5 cursor-not-allowed hover:text-white hover:bg-black transition-all duration-200 shadow"
-            >
+            <div className="border-black inline-block border-2 rounded-xl py-2 px-10 my-5 cursor-not-allowed hover:text-white hover:bg-black transition-all duration-200 shadow">
               <p>投稿</p>
             </div>
             <span className="text-sm ml-3">
