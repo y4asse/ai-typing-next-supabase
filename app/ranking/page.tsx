@@ -13,14 +13,13 @@ const Ranking = () => {
         <GoBackBtn />
       </div>
       <div className="flex flex-col justify-center items-center gap-3 my-10">
-        <div className="text-5xl mb-5 w-3/5">ランキング</div>
+        <div className="text-5xl mb-5 w-3/5">ランキングTop10</div>
         <Suspense fallback={<Spinner />}>
           {/* @ts-ignore */}
           <ScoresList />
         </Suspense>
         {/* @ts-ignore */}
         <CommentForm />
-        <div className="text-5xl my-5 w-3/5">コメント</div>
         <Suspense fallback={<Spinner />}>
           {/* @ts-ignore */}
           <CommentsList />

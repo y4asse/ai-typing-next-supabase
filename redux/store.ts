@@ -4,6 +4,7 @@ import modalReducer from "./features/Modal";
 import scoreReducer from "./features/Scores";
 import gameReducer from "./features/Game";
 import userReducer from "./features/User";
+import commentReducer from "./features/comment";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     score: scoreReducer,
     game: gameReducer,
     user: userReducer,
+    comment: commentReducer,
   },
 });
 

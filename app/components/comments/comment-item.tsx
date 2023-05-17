@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Database } from "@/database.types";
 import { format } from "date-fns";
@@ -22,7 +22,7 @@ const CommentItem = (commentInfo: Comment) => {
       <p className="mt-3">{commentInfo.content}</p>
       {commentInfo.user_id === userId && (
         <div className="absolute right-0 top-0 flex text-xl gap-3">
-          {/* <EditBtn id="ss" /> */}
+          <EditBtn commentInfo={commentInfo} />
           <DeleteBtn id={commentInfo.id} />
         </div>
       )}
