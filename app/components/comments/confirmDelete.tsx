@@ -19,13 +19,13 @@ const ConfirmDelete = ({
         <h3>削除しますか？</h3>
         <div className="flex gap-20">
           <span
-            className="border-2 border-black bg-red-400 rounded py-3 px-8 cursor-pointer"
+            className="border-2 border-black bg-red-400 rounded py-3 px-8 cursor-pointer hover:bg-red-700 transition-all duration-200"
             onClick={handleDelete}
           >
             {isLoading ? <BtnSppiner /> : "削除"}
           </span>
           <span
-            className="border-2 border-black rounded py-3 px-7 cursor-pointer"
+            className="border-2 border-black rounded py-3 px-7 cursor-pointer hover:bg-black hover:text-white transition-all duration-200"
             onClick={() => setIsConfirming(false)}
           >
             いいえ
