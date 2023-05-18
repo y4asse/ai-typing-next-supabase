@@ -1,7 +1,6 @@
 "use client";
 
 import { FaGithub } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/redux/hooks";
 import { TbLogout } from "react-icons/tb";
