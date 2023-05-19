@@ -8,6 +8,7 @@ const Buttons = () => {
   router.prefetch("/play/easy");
   router.prefetch("/play/normal");
   router.prefetch("/play/hard");
+  router.prefetch("/");
   return (
     <div className="buttonContainer">
       <button className="button" onClick={() => router.push("/play/easy")}>
