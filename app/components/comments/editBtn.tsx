@@ -1,9 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import React, { Dispatch, useState } from "react";
 import { BsFillPencilFill } from "react-icons/bs";
-import { useSupabase } from "../supabase/supabase-provider";
 import { Database } from "@/database.types";
 import { useAppDispatch } from "@/redux/hooks";
 import { setEditingComment } from "@/redux/features/comment";

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Dispatch, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/redux/hooks";
 import { useSupabase } from "../supabase/supabase-provider";

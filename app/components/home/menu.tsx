@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
-// import { GiStairs } from "react-icons/gi";
-// import { FaRocket } from "react-icons/fa";
-// import { FaInfoCircle } from "react-icons/fa";
+import { GiStairs } from "react-icons/gi";
+import { FaRocket } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { showInfoModal } from "@/redux/features/Modal";
 import InfoModal from "../modals/infoModal";
@@ -24,15 +24,15 @@ export default function Menu() {
           onClick={() => router.push("/difficulty")}
           className="button start"
         >
-          {/* <FaRocket className=" inline-block mr-5" /> */}
+          <FaRocket className=" inline-block mr-5" />
           スタート
         </button>
         <button className="button" onClick={() => dispatch(showInfoModal())}>
-          {/* <FaInfoCircle className=" inline-block mr-5" /> */}
+          <FaInfoCircle className=" inline-block mr-5" />
           お知らせ
         </button>
         <button className="button" onClick={() => router.push("/ranking")}>
-          {/* <GiStairs className=" inline-block mr-5" /> */}
+          <GiStairs className=" inline-block mr-5" />
           ランキング
         </button>
       </div>
