@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   });
   const openai = new OpenAIApi(configuration);
   let content =
-    "色々な単語をランダムでを7個教えて.ただしを「-」をつけずに，番号. 英単語(日本語訳)の形式で返して，余分な記号で囲わないでください．また，例文などの余計なことは書かないでください．";
+    "色々な単語をランダムでを5個教えて.ただしを「-」をつけずに，番号. 英単語(日本語訳)の形式で返して，余分な記号で囲わないでください．また，例文などの余計なことは書かないでください．";
 
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
