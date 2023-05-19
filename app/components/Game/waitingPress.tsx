@@ -28,6 +28,8 @@ const WaitingPress = ({
   difficulty: string;
 }) => {
   const router = useRouter();
+  router.prefetch("/difficulty");
+  router.prefetch("/")
   const dispatch = useAppDispatch();
   const apiRequest = async () => {
     try {

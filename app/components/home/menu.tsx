@@ -12,6 +12,8 @@ import OptionModal from "../modals/optionModal";
 
 export default function Menu() {
   const router = useRouter();
+  router.prefetch("/difficulty")
+  router.prefetch("/ranking")
   const dispatch = useAppDispatch();
   const infoModalOpen = useAppSelector((state) => state.modal.info);
   const optionModalOpen = useAppSelector((state) => state.modal.option);

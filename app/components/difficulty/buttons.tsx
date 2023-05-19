@@ -1,11 +1,13 @@
-'use client'
+"use client";
 
-import { useRouter } from 'next/navigation';
-import React from 'react'
+import { useRouter } from "next/navigation";
+import React from "react";
 
 const Buttons = () => {
   const router = useRouter();
-
+  router.prefetch("/play/easy");
+  router.prefetch("/play/normal");
+  router.prefetch("/play/hard");
   return (
     <div className="buttonContainer">
       <button className="button" onClick={() => router.push("/play/easy")}>
@@ -22,6 +24,6 @@ const Buttons = () => {
       </button>
     </div>
   );
-}
+};
 
-export default Buttons
+export default Buttons;

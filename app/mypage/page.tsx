@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Mypage = () => {
   const router = useRouter();
+  router.prefetch("/logout")
   return (
     <div
       onClick={() => router.push("/logout")}

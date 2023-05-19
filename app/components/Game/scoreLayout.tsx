@@ -13,6 +13,8 @@ const ScoreLayout = ({ difficulty }: { difficulty: string }) => {
   const userId = useAppSelector((state) => state.user.id);
   const router = useRouter();
   const { supabase } = useSupabase();
+  router.prefetch("/ranking");
+  router.prefetch("/difficulty");
 
   const insertScore = async () => {
     const { data, error } = await supabase.from("scores").insert({
