@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Dispatch, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/redux/hooks";
 import { useSupabase } from "../supabase/supabase-provider";
@@ -13,6 +13,8 @@ const ScoreLayout = ({ difficulty }: { difficulty: string }) => {
   const userId = useAppSelector((state) => state.user.id);
   const router = useRouter();
   const { supabase } = useSupabase();
+  router.prefetch("/ranking");
+  router.prefetch("/difficulty");
 
   const insertScore = async () => {
     const { data, error } = await supabase.from("scores").insert({

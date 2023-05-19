@@ -6,7 +6,7 @@ import { GiStairs } from "react-icons/gi";
 import { FaRocket, FaPencilAlt } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { showInfoModal, showOptionModal } from "@/redux/features/Modal";
+import { showInfoModal } from "@/redux/features/Modal";
 import InfoModal from "./components/modals/infoModal";
 import OptionModal from "./components/modals/optionModal";
 import Image from "next/image";
@@ -14,6 +14,8 @@ import imageSrc from "./image/OIG.jpg";
 
 export default function Home() {
   const router = useRouter();
+  router.prefetch("/ranking");
+  router.prefetch("/difficulty");
   const dispatch = useAppDispatch();
   const infoModalOpen = useAppSelector((state) => state.modal.info);
   const optionModalOpen = useAppSelector((state) => state.modal.option);
@@ -48,7 +50,10 @@ export default function Home() {
             <FaInfoCircle className=" inline-block mr-5" />
             お知らせ
           </button>
-          <button className="button" onClick={() => router.push("/ranking")}>
+          <button
+            className="button"
+            onClick={() => router.push("/ranking")}
+          >
             <GiStairs className=" inline-block mr-5" />
             ランキング
           </button>

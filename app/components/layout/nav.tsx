@@ -1,7 +1,6 @@
 "use client";
 
 import { FaGithub } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/redux/hooks";
 import { TbLogout } from "react-icons/tb";
@@ -11,6 +10,7 @@ const Nav = () => {
   const user = useAppSelector((state) => state.user);
   const { supabase } = useSupabase();
   const router = useRouter();
+  router.prefetch("/login")
   const logout = async () => {
     await supabase.auth.signOut();
     router.refresh();
