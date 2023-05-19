@@ -11,6 +11,7 @@ import { Database } from "@/database.types";
 import { headers, cookies } from "next/headers";
 import { ReduxProvider } from "@/redux/provider";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default async function RootLayout({
               <ModalPortal>
                 <Nav />
                 {children}
+                <Analytics />
               </ModalPortal>
               <Footer />
             </Identify>
