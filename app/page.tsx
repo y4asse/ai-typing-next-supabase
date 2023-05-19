@@ -6,7 +6,7 @@ import { GiStairs } from "react-icons/gi";
 import { FaRocket, FaPencilAlt } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { showInfoModal, showOptionModal } from "@/redux/features/Modal";
+import { showInfoModal } from "@/redux/features/Modal";
 import InfoModal from "./components/modals/infoModal";
 import OptionModal from "./components/modals/optionModal";
 import Image from "next/image";

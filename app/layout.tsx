@@ -38,13 +38,13 @@ export default async function RootLayout({
         <ReduxProvider>
           <SupabaseProvider>
             <SupabaseListener accessToken={session?.access_token} />
-            <Identify>
+            {/* <Identify> */}
               <ModalPortal>
                 <Nav />
                 {children}
               </ModalPortal>
               <Footer />
-            </Identify>
+            {/* </Identify> */}
           </SupabaseProvider>
         </ReduxProvider>
       </body>
