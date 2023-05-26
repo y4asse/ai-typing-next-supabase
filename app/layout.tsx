@@ -19,6 +19,7 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   title: "AI Typing",
+  
 };
 
 export default async function RootLayout({
